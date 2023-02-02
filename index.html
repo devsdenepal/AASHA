@@ -1,13 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>A.A.S.H.A</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+body{
+    background-color: #08090d;
+    font-family: monospace;
+}
+        #filtered {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #a2d5fc;
+        }
+
+        #input {
+            padding: 15px;
+            color: rgb(206, 205, 205);
+            min-width: max-content;
+            min-height: max-content;
+            width: 70%;
+            height: 32px;
+            border: 3px solid rgb(17, 242, 242);
+            border-radius: 25px;
+        }
+
+        #input:focus {
+            border: 3px solid rgb(17, 242, 242);
+            border-radius: 25px;
+        }
+
+        .sanitized {
+            color: #ff0000;
+            width: 100%;
+        }
+
+        .textbox {
+            position: fixed;
+            left: 10%;
+            bottom: 10%;
+
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    <input type="text" id="input" onkeydown="sanitizeText(this.value)">
+    <div class="textbox">
+        <input type="text" id="input" oninput="sanitizeAbuseWord(this.value)">
+
+    </div>
+    <div id="filtered"></div>
+
     <script src="./aasha.js"></script>
 </body>
+
 </html>
